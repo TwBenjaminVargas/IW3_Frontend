@@ -3,16 +3,6 @@ import ClientInput from './components/clientInput.vue';
 </script>
 
 <template>
-    <head>
-      <meta charset="UTF-8" />
-      <title>Vue con Bootstrap</title>
-
-      <!-- Bootstrap CSS -->
-      <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-      />
-    </head>
   <main class="background">
     <ClientInput/>
   </main>

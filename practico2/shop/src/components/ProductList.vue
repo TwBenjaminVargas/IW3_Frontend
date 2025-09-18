@@ -1,7 +1,7 @@
 <template>
     <!-- Formulario solo si showForm es true -->
     <AddProduct v-model:showForm="showForm" v-model:products="products"/>
-  <v-container>
+  <v-container class="bg-cyan-lighten-5 rounded-lg">
     <v-row>
 
       <!-- Search -->
@@ -23,21 +23,17 @@
     </v-row>
 
     <!-- Products List -->
-    <v-list>
-      <template v-if="products.length > 0">
-      <v-list-item v-for="product in filteredProducts" :key="product.id">
+    <v-list class="bg-cyan-lighten-5" >
+      <template v-if="products.length > 0" >
+        <ProdutListItem v-for="product in filteredProducts" :key="product.id" :product="product"></ProdutListItem>
+      </template>
+
+      <v-list-item v-else>
         <v-list-item-content>
-          <v-list-item-title>{{ product.name }}</v-list-item-title>
+          <v-list-item-title>No hay productos registrados</v-list-item-title>
         </v-list-item-content>
       </v-list-item>
-  </template>
-
-  <v-list-item v-else>
-    <v-list-item-content>
-      <v-list-item-title>No hay productos registrados</v-list-item-title>
-    </v-list-item-content>
-  </v-list-item>
-  </v-list>
+    </v-list>
 
 </v-container>
 </template>
@@ -45,6 +41,7 @@
 <script setup>
   import { ref, onMounted, computed } from 'vue';
   import { PRODUCTS_LIST_KEY} from '@/config/Constants.js';
+import ProdutListItem from './ProdutListItem.vue';
 
   const search = ref('');
   const products = ref([]);

@@ -1,4 +1,6 @@
 <template>
+    <!-- Formulario solo si showForm es true -->
+    <AddProduct v-model:showForm="showForm" v-model:products="products"/>
   <v-container>
     <v-row>
 
@@ -14,7 +16,7 @@
 
       <!-- Button + -->
       <v-col cols="auto">
-        <v-btn variant="outlined" icon>
+        <v-btn variant="outlined" icon @click="showForm = !showForm">
           <v-icon>mdi-plus</v-icon>
         </v-btn>
       </v-col>
@@ -41,16 +43,19 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-const search = ref('');
+  import { ref, onMounted } from 'vue';
+  import { PRODUCTS_LIST_KEY, EMITS} from '@/config/Constants.js';
 
-/* Mock products data */
-const products = ref([
-  { id: 1, name: 'Producto 1' },
-  { id: 2, name: 'Producto 2' },
-  { id: 3, name: 'Producto 3' },
-]);
+  const search = ref('');
+  const products = ref([]);
 
+  const showForm = ref(false)
 
+  onMounted(getProductList)
+
+  function getProductList()
+  {
+    products.value = JSON.parse(localStorage.getItem(PRODUCTS_LIST_KEY)) || []
+  }
 
 </script>

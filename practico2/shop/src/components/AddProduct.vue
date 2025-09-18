@@ -15,7 +15,7 @@
 </template>
 <script setup>
     import { ref } from 'vue';
-    import { PRODUCTS_LIST_KEY, EMITS} from '@/config/Constants.js';
+    import { PRODUCTS_LIST_KEY} from '@/config/Constants.js';
 import { tr } from 'vuetify/locale';
 
     const showForm = defineModel('showForm');

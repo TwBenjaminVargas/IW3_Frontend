@@ -25,7 +25,7 @@
     <!-- Products List -->
     <v-list>
       <template v-if="products.length > 0">
-      <v-list-item v-for="product in products" :key="product.id">
+      <v-list-item v-for="product in filteredProducts" :key="product.id">
         <v-list-item-content>
           <v-list-item-title>{{ product.name }}</v-list-item-title>
         </v-list-item-content>
@@ -43,8 +43,8 @@
 </template>
 
 <script setup>
-  import { ref, onMounted } from 'vue';
-  import { PRODUCTS_LIST_KEY, EMITS} from '@/config/Constants.js';
+  import { ref, onMounted, computed } from 'vue';
+  import { PRODUCTS_LIST_KEY} from '@/config/Constants.js';
 
   const search = ref('');
   const products = ref([]);
@@ -57,5 +57,13 @@
   {
     products.value = JSON.parse(localStorage.getItem(PRODUCTS_LIST_KEY)) || []
   }
+
+  // Computed property to filter products based on search input
+  const filteredProducts = computed(() => {
+    if (!search.value) return products.value
+    return products.value.filter(product =>
+      product.name.toLowerCase().includes(search.value.toLowerCase())
+    )
+  })
 
 </script>

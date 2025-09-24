@@ -16,6 +16,10 @@ import { createApp } from 'vue'
 // Styles
 import 'unfonts.css'
 
+// Mock Products
+import { initMockProducts } from './services/productService'
+initMockProducts()
+
 const app = createApp(App)
 
 registerPlugins(app)

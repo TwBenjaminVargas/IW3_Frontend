@@ -50,7 +50,6 @@
       />
     </v-list>
 
-
 </v-container>
 
 </template>

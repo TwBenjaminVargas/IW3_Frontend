@@ -1,10 +1,11 @@
 import { CART_KEY } from "@/config/Constants";
+import { ref } from "vue";
 
-let cart = getStoredCart();
+let cart = ref(getStoredCart());
 
 function saveCart()
 {
-  localStorage.setItem(CART_KEY, JSON.stringify(cart))
+  localStorage.setItem(CART_KEY, JSON.stringify(cart.value))
 }
 
 function getStoredCart()
@@ -17,7 +18,7 @@ export const cartService =
 {
   addToCart(product)
   {
-    cart.push(product)
+    cart.value.push(product)
     saveCart()
   },
 
@@ -28,7 +29,12 @@ export const cartService =
 
   removeFromCart(productId)
   {
-    cart = cart.filter(p => p.id !== productId)
+    cart.value = cart.value.filter(p => p.id !== productId)
     saveCart()
   },
+  
+  isInCart(productId)
+  {
+    return cart.value.some(p => p.id === productId)
+  }
 }

@@ -43,7 +43,7 @@
 
 <script setup>
   
-  import { defineProps, ref} from 'vue'
+  import { defineProps, ref, onMounted} from 'vue'
   import { cartService } from '@/services/cartService'
 
   //properties
@@ -51,6 +51,17 @@
 
   //reactive references
   const inCart = ref(false);
+
+  //lifecycle
+  onMounted(initAddToCartButton)
+
+  function initAddToCartButton()
+  {
+    console.log("Product: "+ props.product.id +" prev: " + inCart.value);
+    inCart.value = cartService.isInCart(props.product.id);
+    console.log("current: " + inCart.value);
+  }
+
 
   function addToCartButton()
   {

@@ -43,22 +43,14 @@
 
 <script setup>
   
-  import { defineProps, ref, onMounted} from 'vue'
+  import { defineProps, computed } from 'vue'
   import { cartService } from '@/services/cartService'
 
   //properties
   const props = defineProps({product: Object});
 
-  //reactive references
-  const inCart = ref(false);
-
-  //lifecycle
-  onMounted(initAddToCartButton)
-
-  function initAddToCartButton()
-  {
-    inCart.value = cartService.isInCart(props.product.id);
-  }
+  //computed
+  const inCart = computed(() => cartService.isInCart(props.product.id))
 
 
   function addToCartButton()

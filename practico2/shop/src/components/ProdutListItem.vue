@@ -57,9 +57,7 @@
 
   function initAddToCartButton()
   {
-    console.log("Product: "+ props.product.id +" prev: " + inCart.value);
     inCart.value = cartService.isInCart(props.product.id);
-    console.log("current: " + inCart.value);
   }
 
 

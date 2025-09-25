@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 // Import views
 import Products from '@/pages/Products.vue'
 import Clients from '@/pages/Clients.vue'
-import ProductDetail from '@/components/ProductDetails.vue'
+import ProductDetail from '@/pages/ProductDetail.vue'
 const routes = [
   {
     path: '/products',       // URL

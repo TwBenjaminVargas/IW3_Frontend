@@ -1,5 +1,5 @@
 <template>
-  <Cart/>
+  <ClientInput/>
 </template>
 
 <script setup>

@@ -1,0 +1,1 @@
+export const  BACKGROUND_IMG_URL = 'https://static.vecteezy.com/system/resources/previews/021/304/287/non_2x/abstract-geometric-background-of-fluid-liquid-and-dynamic-shapes-wallpaper-gradient-with-liquid-shape-illustration-colorful-template-banner-with-soft-curve-and-wave-free-vector.jpg';

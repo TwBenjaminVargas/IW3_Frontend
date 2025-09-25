@@ -11,7 +11,7 @@
       variant="outlined"
       prepend-inner-icon="mdi-magnify"
       v-model="search"
-      style="height: 56px"
+      style="max-height: 56px"
     />
 
     <!-- Empty product list -->

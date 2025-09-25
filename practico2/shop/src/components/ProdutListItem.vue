@@ -5,7 +5,11 @@
         
         <!-- Product image-->
         <v-col cols="auto">
-          <v-img :src="product.image" width="200" height="200"/>
+          <v-img
+            :src="product.image" width="200"
+            height="200"
+            rounded="lg"
+          />
         </v-col>
 
         <!-- Product details -->

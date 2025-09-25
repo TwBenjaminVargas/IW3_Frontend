@@ -1,5 +1,5 @@
 <template>
-  <ProductList />
+  <Cart/>
 </template>
 
 <script setup>

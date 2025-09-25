@@ -8,7 +8,7 @@
       variant="outlined"
       prepend-inner-icon="mdi-magnify"
       v-model="search"
-      style="max-height: 56px"
+      style="height: 56px"
     />
 
     <!-- Empty product list -->

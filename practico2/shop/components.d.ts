@@ -9,6 +9,8 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./src/components/AppFooter.vue')['default']
+    Cart: typeof import('./src/components/Cart.vue')['default']
+    CartItem: typeof import('./src/components/CartItem.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     ProductList: typeof import('./src/components/ProductList.vue')['default']
     ProdutListItem: typeof import('./src/components/ProdutListItem.vue')['default']

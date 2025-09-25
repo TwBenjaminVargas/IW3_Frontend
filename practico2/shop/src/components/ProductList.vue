@@ -1,7 +1,7 @@
 <template>
 
   <v-container
-    class="bg-cyan-lighten-5 rounded-lg d-flex flex-column"
+    class="bg-cyan-lighten-5 rounded-lg d-flex flex-column elevation-10"
     height="80vh"
     width="70vw">
     

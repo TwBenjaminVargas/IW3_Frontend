@@ -4,7 +4,7 @@
             title="¡Exito!"
             type="success"
             v-show="popUp"
-            class="position-fixed"
+            class="position-fixed elevation-10"
         >
             ¡Bienvenido/a {{client}}!
 

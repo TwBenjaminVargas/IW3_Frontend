@@ -8,7 +8,7 @@
             <v-tabs>
                 <v-tab text="Inicio"></v-tab>
                 <v-tab text="Productos" :to="{ name: 'Products' }"></v-tab>
-                <v-tab text="Clientes"></v-tab>
+                <v-tab text="Clientes" :to="{ name: 'Clients' }"></v-tab>
             </v-tabs>
         </template>
     </v-toolbar>

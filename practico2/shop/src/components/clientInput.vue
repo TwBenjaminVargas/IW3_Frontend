@@ -1,12 +1,12 @@
 <template>
     <clientPopUp v-model:popUp="popUp" :client="clientName"/>
     <div 
-        class="d-flex flex-column justify-center align-center bg-cyan-lighten-5 rounded-lg overflow-hidden"
-        style="width: 40vw;
-        height: 30vh;"
+        class="d-flex flex-column justify-center align-center bg-cyan-lighten-5 rounded-lg overflow-hidden elevation-10"
+        style="width: 45vw;
+        height: 40vh;"
     >
         <div 
-            class="d-flex flex-column w-80 flex-grow-1"
+            class="d-flex flex-column w-90 flex-grow-1 justify-center"
             >
                 <span
                     class="text-center mb-4 text-teal text-h3"

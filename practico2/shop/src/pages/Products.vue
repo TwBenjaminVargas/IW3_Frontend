@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-100 w-100 pt-10"
+    class="h-100 w-100 pt-5"
     :style="{
       backgroundImage: `url(${BACKGROUND_IMG_URL})`,
       backgroundSize: 'cover',

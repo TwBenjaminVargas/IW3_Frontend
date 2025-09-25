@@ -1,6 +1,9 @@
 <template>
 
-  <v-container class="bg-cyan-lighten-5 rounded-lg d-flex flex-column">
+  <v-container
+    class="bg-cyan-lighten-5 rounded-lg d-flex flex-column"
+    height="80vh"
+    width="70vw">
     
     <!-- Search -->
     <v-text-field

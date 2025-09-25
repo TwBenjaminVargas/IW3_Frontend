@@ -20,6 +20,11 @@ export const productService =
   getProducts()
   {
     return products;
+  },
+  
+  findProductById(id)
+  {
+    return products.find(product => product.id === id) || null;
   }
 }
 export function initMockProducts()

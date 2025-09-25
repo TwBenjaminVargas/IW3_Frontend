@@ -1,6 +1,10 @@
 <template>
 
-    <v-list-item :class="product.stock === 0 ? 'bg-red-lighten-4' : ''" class="rounded-lg">
+    <v-list-item
+      :class="product.stock === 0 ? 'bg-red-lighten-4' : ''" 
+      class="rounded-lg"
+      @click="goToProduct"
+    >
       <v-row class="align-center">
         
         <!-- Product image-->
@@ -49,6 +53,7 @@
   
   import { defineProps, computed } from 'vue'
   import { cartService } from '@/services/cartService'
+  import { useRouter } from 'vue-router'
 
   //properties
   const props = defineProps({product: Object});
@@ -56,6 +61,8 @@
   //computed
   const inCart = computed(() => cartService.isInCart(props.product.id))
 
+  //router
+  const router = useRouter()
 
   function addToCartButton()
   {
@@ -71,6 +78,11 @@
   function toggleAddToCartButton()
   {
     inCart.value = !inCart.value
+  }
+
+  function goToProduct()
+  {
+    router.push('/products/'+props.product.id)
   }
 
 </script>

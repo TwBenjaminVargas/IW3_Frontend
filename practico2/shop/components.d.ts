@@ -14,6 +14,7 @@ declare module 'vue' {
     ClientInput: typeof import('./src/components/clientInput.vue')['default']
     ClientPopUp: typeof import('./src/components/clientPopUp.vue')['default']
     MyToolbar: typeof import('./src/components/MyToolbar.vue')['default']
+    ProductDetails: typeof import('./src/components/ProductDetails.vue')['default']
     ProductList: typeof import('./src/components/ProductList.vue')['default']
     ProdutListItem: typeof import('./src/components/ProdutListItem.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

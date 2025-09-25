@@ -39,7 +39,10 @@
         </span>
     </div>
 </div>
-    <div v-else>
+    <div v-else
+        class="bg-teal rounded-xl"
+        style="height: 80vh;
+        width: 70vw;">
     <v-empty-state
         headline="Error"
         title="Producto no encontrado"

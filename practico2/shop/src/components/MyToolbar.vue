@@ -2,7 +2,7 @@
     <v-toolbar class="text-white bg-teal">
         
         <v-toolbar-title text="Shop!" class="text-h5"></v-toolbar-title>
-        <v-btn icon="mdi-cart-outline" @click="drawer = !drawer" size="x-large"></v-btn>
+        <v-btn icon="mdi-cart-outline" :class="drawer ? 'bg-error': ''" @click="drawer = !drawer" size="x-large"></v-btn>
         
         <template v-slot:extension>
             <v-tabs>
@@ -14,9 +14,10 @@
     </v-toolbar>
     <v-slide-x-transition>
         <Cart v-if="drawer"
-            class="position-fixed"
-            style="z-index: 100;"
-        >            
+            class="position-fixed mt-15 elevation-10"
+            style="z-index: 100;
+            height:80vh;"
+        >  
         </Cart>
     </v-slide-x-transition>
 </template>

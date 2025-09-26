@@ -19,6 +19,7 @@ El objetivo es crear aplicaciones web dinámicas, escalables y fáciles de mante
 
 ```text
 IW3_Frontend/
+├─ assets/         # Carpeta con imágenes y recursos
 ├─ practico1/      # Primer trabajo práctico
 ├─ practico2/      # Segundo trabajo práctico (parcial)
 └─ README.md       # Este archivo
@@ -64,3 +65,20 @@ npm run dev
 Abrí tu navegador en [http://localhost:8080](http://localhost:3000/) 🚀
 
 ---
+## 🎨 Demo / Screenshots
+
+💻 **Login**
+
+![Login](./assets/login.png)
+
+💻 **Vista de Productos**
+
+![Products](./assets/products.png)
+
+💻 **Vista de Clientes**
+
+![Clients](./assets/clients.png)
+
+🛒 **Carrito de Compras**
+
+![Cart](./assets/cart.png)

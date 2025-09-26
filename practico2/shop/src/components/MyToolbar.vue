@@ -30,8 +30,7 @@
     <v-slide-x-transition>
         <Cart v-if="drawer"
             class="position-fixed mt-15 elevation-10"
-            style="z-index: 100;
-            height:80vh;"
+            style="z-index: 100;"
         >  
         </Cart>
     </v-slide-x-transition>

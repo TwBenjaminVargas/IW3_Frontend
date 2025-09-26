@@ -2,6 +2,7 @@
 
     <div 
         class="bg-cyan-lighten-5 rounded-lg d-flex flex-column align-center text-center overflow-hidden"
+        style="height: 90vh; width: 30vw;"
     >
         <div 
             class="text-h4 font-weight-bold"
@@ -24,11 +25,11 @@
 
         <!-- Cart list -->
         <div v-else
-            class="d-flex flex-column w-100 justify-space-between "
-            style="max-height:75vh;"
+            class="d-flex flex-column w-100"
         >
             <v-list
-                class="overflow-y bg-cyan-lighten-5 flex-grow-1"
+                class="overflow-y bg-cyan-lighten-5"
+                style="height:80vh;"
             >
                 <CartItem
                 v-for="product in cart"
@@ -39,7 +40,7 @@
             </v-list>
         
             <div
-                class="text-h5 font-weight-bold bg-teal"
+                class="text-h5 font-weight-bold bg-teal pa-2"
             >
                 Total: ${{ total.toFixed(2) }}
             </div>

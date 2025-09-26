@@ -1,39 +1,52 @@
 <template>
     <div 
         class="d-flex flex-column justify-center align-center bg-cyan-lighten-5 rounded-lg overflow-hidden elevation-10"
-        style="width: 45vw;
-        height: 40vh;"
+        style="width: 40vw;
+        height: 60vh;"
     >
+        <span class="text-h1 text-bold mt-2">Shop!</span>
         <div 
-            class="d-flex flex-column w-90 flex-grow-1 justify-center"
+            class="d-flex flex-column flex-grow-1 justify-center"
+            style="width: 90%;"
             >
                 <span
-                    class="text-center mb-4 text-teal text-h3"
+                    class="text-center mb-4 text-teal text-h4"
                 >
                     Iniciar Sesión
                 </span>
       
                 <div class="mb-4">
-                    <label for="Usuario">Nombre del Cliente:</label>
+                    <label for="Usuario">Email:</label>
                     <v-text-field
                       id="name"
                       autocomplete="off"
-                      v-model.trim="inputValue"
+                      v-model.trim="userInput"
                       placeholder="Email"
-                      :error="inputValue.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputValue)"
-                      :error-messages="inputValue.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputValue) 
+                      :error="userInput.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userInput)"
+                      :error-messages="userInput.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userInput) 
                       ? 'Ingrese un correo electrónico válido' : ''"
                     >
                     </v-text-field>
-            </div>
+                    <label for="passwordInput">Contraseña:</label>
+                    <v-text-field
+                      id="passwordInput"
+                      v-model.trim="passwordInput"
+                      placeholder="Contraseña"
+                      type="password"
+                      :error="passwordInput.length > 0 && passwordInput.length < 6"
+                      :error-messages="passwordInput.length > 0 && passwordInput.length < 6 
+                      ? 'La contraseña debe tener al menos 6 caracteres' : ''"
+                    />
+                </div>
       
             <v-btn
-                :disabled="inputValue.length < 3"
+                :disabled="userInput.length < 3"
                 @click="registerClientButton"
-                class="bg-teal"
+                class="bg-teal align-self-center"
                 rounded="pill"
+                style="width: 60%;"
             >
-                Registrar
+                Ingresar
             </v-btn>
         </div>
     </div>
@@ -41,6 +54,7 @@
 
 <script setup>
     import {ref} from 'vue';
-    const inputValue = ref('');
+    const userInput = ref('');
+    const passwordInput = ref('');
 
 </script>

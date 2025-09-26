@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <MyToolbar></MyToolbar>
+    <MyToolbar v-if="route.path !== '/login'"></MyToolbar>
     <v-main>
       <router-view />
     </v-main>
@@ -8,5 +8,7 @@
 </template>
 
 <script setup>
-  //
+  import { useRoute } from 'vue-router'
+
+  const route = useRoute()
 </script>

@@ -13,6 +13,7 @@ declare module 'vue' {
     CartItem: typeof import('./src/components/CartItem.vue')['default']
     ClientInput: typeof import('./src/components/clientInput.vue')['default']
     ClientPopUp: typeof import('./src/components/clientPopUp.vue')['default']
+    LoginForm: typeof import('./src/components/LoginForm.vue')['default']
     MyToolbar: typeof import('./src/components/MyToolbar.vue')['default']
     ProductDetails: typeof import('./src/components/ProductDetails.vue')['default']
     ProductList: typeof import('./src/components/ProductList.vue')['default']

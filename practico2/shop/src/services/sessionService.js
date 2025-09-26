@@ -1,7 +1,7 @@
 import { SESSION_KEY } from "@/config/Constants";
 import { ref } from "vue";
 
-let session = ref(getStoredSession)
+let session = ref(getStoredSession())
 
 function getStoredSession()
 {
@@ -33,5 +33,10 @@ export const sessionService =
         if(session.value)
             return true;
         return false;
+    },
+
+    getSessionUserMail()
+    {
+        return session.value;
     }
 }

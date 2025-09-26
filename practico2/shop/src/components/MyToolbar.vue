@@ -1,8 +1,23 @@
 <template>
     <v-toolbar class="text-white bg-teal">
         
-        <v-toolbar-title text="Shop!" class="text-h5"></v-toolbar-title>
-        <v-btn icon="mdi-cart-outline" :class="drawer ? 'bg-error': ''" @click="drawer = !drawer" size="x-large"></v-btn>
+        <v-toolbar-title 
+            text="Shop!"
+            class="text-h5">
+        </v-toolbar-title>
+        <v-icon class="mr-2">mdi-account</v-icon>
+        <span class="font-weight-bold">{{sessionService.getSessionUserMail()}}</span>
+        <v-btn 
+            icon="mdi-logout"
+            @click="logOutButton"
+            size="x-large">
+        </v-btn>
+        <v-btn 
+            icon="mdi-cart-outline"
+            :class="drawer ? 'bg-error': ''"
+            @click="drawer = !drawer"
+            size="x-large">
+        </v-btn>
         
         <template v-slot:extension>
             <v-tabs>
@@ -23,7 +38,20 @@
 </template>
 
 <script setup>
+    import { sessionService } from '@/services/sessionService';
     import { ref } from 'vue';
+    import { useRouter } from 'vue-router';
     
+    // references
     const drawer = ref(false);
+
+    // router
+    const router = useRouter();
+
+    function logOutButton()
+    {
+        sessionService.logout();
+        router.push("/login")
+
+    }
 </script>

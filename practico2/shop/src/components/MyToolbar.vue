@@ -3,7 +3,7 @@
         
         <v-toolbar-title 
             text="Shop!"
-            class="text-h5">
+            class="text-h5 font-weight-bold">
         </v-toolbar-title>
         <v-icon class="mr-2">mdi-account</v-icon>
         <span class="font-weight-bold">{{sessionService.getSessionUserMail()}}</span>

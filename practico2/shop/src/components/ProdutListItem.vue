@@ -29,7 +29,7 @@
             v-if="product.stock > 0"
             :color="inCart ? 'blue-grey-lighten-3': 'teal'"
             variant="flat"
-            @click="addToCartButton"
+            @click.stop="addToCartButton"
           >
             {{ inCart ? 'Quitar del carrito' : 'Añadir al carrito' }}
           </v-btn>

@@ -81,7 +81,7 @@
     function loginButton()
     {
         sessionService.login(userInput.value.trim(),passwordInput.value.trim());
-        router.push('/Home');
+        router.push('/');
     }
 
 </script>

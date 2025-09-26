@@ -21,7 +21,7 @@
         
         <template v-slot:extension>
             <v-tabs>
-                <v-tab text="Inicio"></v-tab>
+                <v-tab text="Inicio":to="{ name: 'Home' }"></v-tab>
                 <v-tab text="Productos" :to="{ name: 'Products' }"></v-tab>
                 <v-tab text="Clientes" :to="{ name: 'Clients' }"></v-tab>
             </v-tabs>

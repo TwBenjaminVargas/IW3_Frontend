@@ -5,6 +5,7 @@ import Products from '@/pages/Products.vue'
 import Clients from '@/pages/Clients.vue'
 import ProductDetail from '@/pages/ProductDetail.vue'
 import Login from '@/pages/Login.vue'
+import Home from '@/pages/Home.vue'
 
 import { sessionService } from '@/services/sessionService'
 
@@ -25,6 +26,12 @@ const routes = [
     path: '/products/:id',
     name: 'Product Detail',
     component: ProductDetail,
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/home',
+    name: 'Home',
+    component: Home,
     meta: { requiresAuth: true }
   },
   {

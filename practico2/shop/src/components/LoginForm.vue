@@ -22,9 +22,8 @@
                       autocomplete="off"
                       v-model.trim="userInput"
                       placeholder="Email"
-                      :error="userInput.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userInput)"
-                      :error-messages="userInput.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userInput) 
-                      ? 'Ingrese un correo electrónico válido' : ''"
+                      :error="wrongUserInput()"
+                      :error-messages="wrongUserInput() ? 'Ingrese un correo electrónico válido' : ''"
                     >
                     </v-text-field>
                     <label for="passwordInput">Contraseña:</label>
@@ -33,14 +32,14 @@
                       v-model.trim="passwordInput"
                       placeholder="Contraseña"
                       type="password"
-                      :error="passwordInput.length > 0 && passwordInput.length < 6"
-                      :error-messages="passwordInput.length > 0 && passwordInput.length < 6 
+                      :error="wrongPasswordInput()"
+                      :error-messages=" wrongPasswordInput()
                       ? 'La contraseña debe tener al menos 6 caracteres' : ''"
                     />
                 </div>
       
             <v-btn
-                :disabled="userInput.length < 3"
+                :disabled="blockButtonCondition()"
                 @click="registerClientButton"
                 class="bg-teal align-self-center"
                 rounded="pill"
@@ -56,5 +55,20 @@
     import {ref} from 'vue';
     const userInput = ref('');
     const passwordInput = ref('');
+
+    function wrongUserInput()
+    {
+        return userInput.value.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(userInput.value)
+    }
+    
+    function wrongPasswordInput()
+    {
+        return passwordInput.value.length > 0 && passwordInput.value.length < 6
+    }
+
+    function blockButtonCondition()
+    {
+        return wrongPasswordInput() || wrongUserInput() || !userInput.value.trim() || !passwordInput.value.trim();
+    }
 
 </script>

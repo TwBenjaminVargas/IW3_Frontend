@@ -40,7 +40,7 @@
       
             <v-btn
                 :disabled="blockButtonCondition()"
-                @click="registerClientButton"
+                @click="loginButton"
                 class="bg-teal align-self-center"
                 rounded="pill"
                 style="width: 60%;"
@@ -52,9 +52,16 @@
 </template>
 
 <script setup>
+    import { sessionService } from '@/services/sessionService';
     import {ref} from 'vue';
+    import { useRouter } from 'vue-router';
+    
+    // references
     const userInput = ref('');
     const passwordInput = ref('');
+
+    // router
+    const router = useRouter();
 
     function wrongUserInput()
     {
@@ -69,6 +76,12 @@
     function blockButtonCondition()
     {
         return wrongPasswordInput() || wrongUserInput() || !userInput.value.trim() || !passwordInput.value.trim();
+    }
+
+    function loginButton()
+    {
+        sessionService.login(userInput.value.trim(),passwordInput.value.trim());
+        router.push('/Home');
     }
 
 </script>

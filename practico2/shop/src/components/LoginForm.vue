@@ -1,5 +1,4 @@
 <template>
-    <clientPopUp v-model:popUp="popUp" :client="clientName"/>
     <div 
         class="d-flex flex-column justify-center align-center bg-cyan-lighten-5 rounded-lg overflow-hidden elevation-10"
         style="width: 45vw;
@@ -11,19 +10,19 @@
                 <span
                     class="text-center mb-4 text-teal text-h3"
                 >
-                    Registro de Clientes
+                    Iniciar Sesión
                 </span>
       
                 <div class="mb-4">
-                    <label for="name">Nombre del Cliente:</label>
+                    <label for="Usuario">Nombre del Cliente:</label>
                     <v-text-field
                       id="name"
                       autocomplete="off"
                       v-model.trim="inputValue"
-                      placeholder="Ingresa un nombre"
-                      :error="inputValue.length > 0 && inputValue.length < 3"
-                      :error-messages="inputValue.length > 0 && inputValue.length < 3 ? 
-                          'El nombre debe tener al menos 3 caracteres' : ''"
+                      placeholder="Email"
+                      :error="inputValue.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputValue)"
+                      :error-messages="inputValue.length > 0 && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(inputValue) 
+                      ? 'Ingrese un correo electrónico válido' : ''"
                     >
                     </v-text-field>
             </div>
@@ -42,22 +41,6 @@
 
 <script setup>
     import {ref} from 'vue';
-    import { clientService } from '@/services/clientService';
-
     const inputValue = ref('');
-    const popUp = ref(false);
-    const clientName = ref('');
 
-    function registerClientButton()
-    {
-        clientName.value = inputValue.value
-        clientService.saveClientData(inputValue.value);
-        popUp.value = true;
-        clearInput();
-    }
-
-    function clearInput() 
-    {
-        inputValue.value = '';
-    }
 </script>
